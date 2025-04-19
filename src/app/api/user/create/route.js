@@ -1,7 +1,7 @@
 import { UserModels } from "../../../../lib/models/user";
 import { connectDB } from "../../../../lib/mongodb";
 import bcrypt from "bcryptjs";
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
@@ -31,6 +31,20 @@ export async function POST(req) {
     console.error(err);
     return NextResponse.json(
       { success: false, message: "User creation failed" },
+      { status: 400 }
+    );
+  }
+}
+
+export async function GET(req) {
+  try {
+    return NextResponse.json(
+      { message: "hello world" },
+      { status: 201 }
+    );
+  } catch (err) {
+    return NextResponse.json(
+      { message: "something is wrong" },
       { status: 400 }
     );
   }
