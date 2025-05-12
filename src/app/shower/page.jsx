@@ -9,7 +9,7 @@ import Spinner from "@/component/loader";
 const TaskDisplay = () => {
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedFilter, setSelectedFilter] = useState("all");
+  const [selectedFilter, setSelectedFilter] = useState("today");
   const [toggle, setToggle] = useState(false);
   const [tasks, setTask] = useState([]);
   const [loading, setLoading] = useState(true);
